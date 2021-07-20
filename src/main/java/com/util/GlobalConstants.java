@@ -8,8 +8,8 @@ public class GlobalConstants {
 	public static String CONTRACTSURL = "https://staging.clark.de/de/app/contracts?cv=2";
 	public static int DEFAULT_IMPLICIT_WAIT = 30;
 	public static int DEFAULT_EXPLICIT_WAIT = 30;
-	public static String REG_USERNAME= "test1";
-	public static String REG_PASSWORD= "Clark@1189";
+	public static String REGUSERNAME= "test1";
+	public static String REGPASSWORD= "Clark@1189";
 	
 
 }

@@ -11,8 +11,8 @@ import com.util.Elementutil;
 public class ChooseOption {
 	private WebDriver driver;
 	
-	private String option_header = PropertyReader.getProperty("option_header","Choose_option");
-	private By button_further = PropertyReader.getLocator("button_further","Choose_option");
+	private String optionHeader = PropertyReader.getProperty("option_header","Choose_option");
+	private By buttonFurther = PropertyReader.getLocator("button_further","Choose_option");
 	private Baseutil utils = new Elementutil();
 	
 	public ChooseOption(WebDriver driver) {
@@ -20,31 +20,31 @@ public class ChooseOption {
 	}
 	
 	
-	public WebElement getButton_further() {
-		return utils.waitForElementPresent(driver, button_further);
+	public WebElement getButtonFurther() {
+		return utils.waitForElementPresent(driver, buttonFurther);
 	}
 	
 	
-	public BankDetails choose_options(String startdate, String previous_damage)
+	public BankDetails chooseOptions(String startDate, String previousDamage)
 	{
-		String[] data_header = {"Gewünschter Versicherungsbeginn", "Vorschäden"};
-		for (String str_header: data_header)
+		String[] dataHeader = {"Gewünschter Versicherungsbeginn", "Vorschäden"};
+		for (String strHeader: dataHeader)
 		{
-			String 	header = option_header.replaceAll("data", str_header);
-			if(str_header.equalsIgnoreCase("Gewünschter Versicherungsbeginn"))
+			String 	header = optionHeader.replaceAll("data", strHeader);
+			if(strHeader.equalsIgnoreCase("Gewünschter Versicherungsbeginn"))
 			{
-				By option = By.xpath(header.replaceAll("value", startdate));
+				By option = By.xpath(header.replaceAll("value", startDate));
 				utils.waitForElementPresent(driver, option).click();
 			}
-			else if(str_header.equalsIgnoreCase("Vorschäden"))
+			else if(strHeader.equalsIgnoreCase("Vorschäden"))
 			{
-				By option = By.xpath(header.replaceAll("value", previous_damage));
+				By option = By.xpath(header.replaceAll("value", previousDamage));
 				utils.executeJS(driver, "window.scrollTo(0, document.body.scrollHeight)");
 				utils.waitForElementPresent(driver, option).click();
 			}
 		}
 		
-		getButton_further().click();
+		getButtonFurther().click();
 		
 		return new BankDetails(driver);
 	}

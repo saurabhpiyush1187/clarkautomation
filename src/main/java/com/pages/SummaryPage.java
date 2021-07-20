@@ -13,13 +13,13 @@ import com.util.Elementutil;
 public class SummaryPage {
 	
 	private WebDriver driver;
-	private By confirmation_msg = PropertyReader.getLocator("confirmation_msg","Summary_page");
+	private By confirmationMsg = PropertyReader.getLocator("confirmation_msg","Summary_page");
 	private By completenow = PropertyReader.getLocator("completenow","Summary_page");
 	private Baseutil utils = new Elementutil();
 	
 	
-	public WebElement getConfirmation_msg() {
-		return utils.waitForElementPresent(driver, confirmation_msg);
+	public WebElement getConfirmationMsg() {
+		return utils.waitForElementPresent(driver, confirmationMsg);
 	}
 
 
@@ -34,18 +34,18 @@ public class SummaryPage {
 	}
 	
 	
-	public boolean verify_summary(List<String> str_message)
+	public boolean verifySummary(List<String> strMessage)
 	{
-		String str_actualmessage = getConfirmation_msg().getText();
+		String strActualMessage = getConfirmationMsg().getText();
 		StringBuilder sb = new StringBuilder();
-		for (String s : str_message)
+		for (String s : strMessage)
 		{
 		    sb.append(s);
 		}
 
-		String expected_message = sb.toString();
+		String expectedMessage = sb.toString();
 		
-		if(str_actualmessage.contains(expected_message))
+		if(strActualMessage.contains(expectedMessage))
 		{
 			return true;
 		}
@@ -54,7 +54,7 @@ public class SummaryPage {
 	}
 	
 	
-	public ContractOverview complete_now()
+	public ContractOverview completeNow()
 	{			
 		getCompletenow().click();		
 		return new ContractOverview(driver);

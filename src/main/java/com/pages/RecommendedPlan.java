@@ -8,21 +8,21 @@ import com.util.PropertyReader;
 import com.util.Baseutil;
 import com.util.Elementutil;
 
-public class Recommended_plan{
+public class RecommendedPlan{
 	
 	private WebDriver driver;
-	private String str_completenow = PropertyReader.getProperty("str_completenow","Recommended_plan");
+	private String strCompletenow = PropertyReader.getProperty("str_completenow","Recommended_plan");
 	private Baseutil utils = new Elementutil();
 
-	public Recommended_plan(WebDriver driver) {
+	public RecommendedPlan(WebDriver driver) {
 		this.driver=driver;
 	}
 
 	
-	public Registration click_complete(String str_complete)
+	public Registration clickComplete(String strComplete)
 	{   
-		By locator_completenow = By.xpath(str_completenow.replaceAll("data", str_complete));
-		WebElement element_completenow = utils.waitForElementPresent(driver, locator_completenow);
+		By locatorCompletenow = By.xpath(strCompletenow.replaceAll("data", strComplete));
+		WebElement element_completenow = utils.waitForElementPresent(driver, locatorCompletenow);
 		
 		if(element_completenow!=null)
 		{

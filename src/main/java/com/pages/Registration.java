@@ -13,7 +13,7 @@ public class Registration {
 	private WebDriver driver;
 	private By email=  PropertyReader.getLocator("email","Registration");
 	private By password=  PropertyReader.getLocator("password","Registration");
-	private By button_registration =  PropertyReader.getLocator("button_registration","Registration");
+	private By buttonRegistration =  PropertyReader.getLocator("button_registration","Registration");
 	private Baseutil utils = new Elementutil();
 	
 	
@@ -35,8 +35,8 @@ public class Registration {
 
 	
 
-	public WebElement getButton_registration() {
-		return utils.waitForElementPresent(driver,button_registration);
+	public WebElement getButtonRegistration() {
+		return utils.waitForElementPresent(driver,buttonRegistration);
 	}
 
     
@@ -47,20 +47,20 @@ public class Registration {
 		Integer b = (int)(Math.random()*(max-min+1)+min); 
 		String add = b.toString();
 		
-		String actual_username = username +add+"@mytest.com";
-		getEmail().sendKeys(actual_username);
+		String actualUsername = username +add+"@mytest.com";
+		getEmail().sendKeys(actualUsername);
 		getPassword().sendKeys(password);
-		getButton_registration().click();
+		getButtonRegistration().click();
 		
 		
 	}
 	
 
-	public Personal_details register()
+	public PersonalDetails register()
 	{	
-		String username = GlobalConstants.REG_USERNAME;
-		String password = GlobalConstants.REG_PASSWORD;
+		String username = GlobalConstants.REGUSERNAME;
+		String password = GlobalConstants.REGPASSWORD;
 		doLogin(username, password);
-		return new Personal_details(driver);
+		return new PersonalDetails(driver);
 	}
 }

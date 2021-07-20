@@ -11,8 +11,8 @@ import com.util.Elementutil;
 public class OfferRequest{
 	
 	private WebDriver driver;
-	private By get_started= PropertyReader.getLocator("get_started","Offer_request");
-	private String str_privathaftpflicht = PropertyReader.getProperty("str_privathaftpflicht","Offer_request");
+	private By getStarted= PropertyReader.getLocator("get_started","Offer_request");
+	private String strPrivathaftpflicht = PropertyReader.getProperty("str_privathaftpflicht","Offer_request");
 	private Baseutil utils = new Elementutil();
 	
 	public OfferRequest(WebDriver driver) {
@@ -20,26 +20,26 @@ public class OfferRequest{
 	}
 	
 	
-	public WebElement getGet_started() {
-		utils.waitForElementPresent( driver,get_started);
-		return utils.waitForElementToBeClickable(driver,get_started);
+	public WebElement getGetStarted() {
+		utils.waitForElementPresent( driver,getStarted);
+		return utils.waitForElementToBeClickable(driver,getStarted);
 		
 	}
 	
 	
-	public Yourdata_page select_insurance(String str_insurance)
+	public YourdataPage selectInsurance(String strInsurance)
 	{
-		By locator_privathaftpflicht = By.xpath(str_privathaftpflicht.replaceAll("name", str_insurance));
-		WebElement element_privathaftpflicht = utils.waitForElementPresent(driver,locator_privathaftpflicht);
+		By locatorPrivathaftpflicht = By.xpath(strPrivathaftpflicht.replaceAll("name", strInsurance));
+		WebElement elementPrivathaftpflicht = utils.waitForElementPresent(driver,locatorPrivathaftpflicht);
 		
-		if(element_privathaftpflicht!=null)
+		if(elementPrivathaftpflicht!=null)
 		{
-			element_privathaftpflicht.click();
+			elementPrivathaftpflicht.click();
 		}
 		
-		getGet_started().click();
+		getGetStarted().click();
 		
-		return new Yourdata_page(driver);
+		return new YourdataPage(driver);
 	}
 	
 	

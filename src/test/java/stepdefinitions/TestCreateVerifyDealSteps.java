@@ -16,10 +16,10 @@ public class TestCreateVerifyDealSteps {
 	
 	private Contracts contractspage =  new Contracts(DriverFactory.getDriver());
 	private OfferRequest offerpage;
-	private Yourdata_page datapage;
-	private Recommended_plan planpage;
+	private YourdataPage datapage;
+	private RecommendedPlan planpage;
 	private Registration registrationpage;
-	private Personal_details detailspage;
+	private PersonalDetails detailspage;
 	private ChooseOption optionpage;
 	private BankDetails bankpage;
 	private SummaryPage summarypage;
@@ -55,7 +55,7 @@ public class TestCreateVerifyDealSteps {
 
 	@When("the user selects {string} insurance")
 	public void the_user_selects_insurance(String str_privathaftpflicht) {
-	    datapage = offerpage.select_insurance(str_privathaftpflicht);
+	    datapage = offerpage.selectInsurance(str_privathaftpflicht);
 	    
 	}
 
@@ -76,7 +76,7 @@ public class TestCreateVerifyDealSteps {
 
 	@When("the user selects recommended offer by clicking on {string} button")
 	public void the_user_selects_recommended_offer_by_clicking_on_button(String str_complete) {
-		registrationpage = planpage.click_complete(str_complete);
+		registrationpage = planpage.clickComplete(str_complete);
 	   
 	}
 
@@ -100,12 +100,12 @@ public class TestCreateVerifyDealSteps {
 		regdata.add(regList.get(0).get("Ort"));
 		regdata.add(regList.get(0).get("Telefonnummer"));
 	    
-		optionpage = detailspage.fill_data(regdata);
+		optionpage = detailspage.fillData(regdata);
 	}
 
 	@When("the user selects the following options for {string} and {string}")
 	public void the_user_selects_the_following_options_for_nächster_werktag_and_nein(String startdate, String previous_damage) {
-	    bankpage = optionpage.choose_options(startdate, previous_damage);
+	    bankpage = optionpage.chooseOptions(startdate, previous_damage);
 	    
 	}
 
@@ -118,21 +118,21 @@ public class TestCreateVerifyDealSteps {
 	@Then("the user should be able to view Summary Page which starts from the  following confirmation message")
 	public void the_user_should_be_able_match_details_from_the_given_data_sheet(io.cucumber.datatable.DataTable dataTable) {
 		List<String> str_message = dataTable.asList(String.class);	
-		Assert.assertTrue(summarypage.verify_summary(str_message));
-		overviewpage = summarypage.complete_now();
+		Assert.assertTrue(summarypage.verifySummary(str_message));
+		overviewpage = summarypage.completeNow();
 	   
 	    
 	}
 
 	@When("the user choose to view contract overview by clicking on {string} button")
 	public void the_user_choose_to_view_contract_overview_by_clicking_on_button(String button) {
-		appmanagerpage =overviewpage.click_on_overview(button);
+		appmanagerpage =overviewpage.clickOnOverview(button);
 	    
 	}
 
 	@Then("the user should be able to view the contract on the {string} page")
 	public void the_user_should_be_able_to_view_the_contract_on_the_page(String url) {
-	    Assert.assertTrue(appmanagerpage.verify_contract(url));
+	    Assert.assertTrue(appmanagerpage.verifyContract(url));
 	   
 	}
 

@@ -17,11 +17,11 @@ public class ContractOverview {
 	}
 	
 	
-	public VerifyContract click_on_overview(String button)
+	public VerifyContract clickOnOverview(String button)
 	{	
-		By loactor_overview = By.xpath(overview.replaceAll("data", button));
-		utils.waitForElementPresent(driver, loactor_overview);
-		utils.waitForElementToBeClickable(driver, loactor_overview).click();
+		By loactorOverview = By.xpath(overview.replaceAll("data", button));
+		utils.waitForElementPresent(driver, loactorOverview);
+		utils.waitForElementToBeClickable(driver, loactorOverview).click();
 		return new VerifyContract(driver);
 	}
 

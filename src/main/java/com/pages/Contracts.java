@@ -15,10 +15,10 @@ import org.openqa.selenium.WebElement;
 public class Contracts {
 
 	private WebDriver driver;
-	private By cookiepopup = PropertyReader.getLocator("cookiepopup", "Contracts");
-	private By contractpage = PropertyReader.getLocator("contractpage", "Contracts");
-	private By menulocators = PropertyReader.getLocator("menulocators", "Contracts");
-	private String str_angebote = PropertyReader.getProperty("str_angebote", "Contracts");
+	private By cookiePopup = PropertyReader.getLocator("cookiepopup", "Contracts");
+	private By contractPage = PropertyReader.getLocator("contractpage", "Contracts");
+	private By menuLocators = PropertyReader.getLocator("menulocators", "Contracts");
+	private String strAngebote = PropertyReader.getProperty("str_angebote", "Contracts");
 	private Baseutil utils = new Elementutil();
 
 	public Contracts(WebDriver driver) {
@@ -26,15 +26,15 @@ public class Contracts {
 	}
 
 	public WebElement getCookiepopup() {
-		return utils.waitForElementPresent(driver, cookiepopup);
+		return utils.waitForElementPresent(driver, cookiePopup);
 	}
 
 	public WebElement getContractpage() {
-		return utils.waitForElementPresent(driver, contractpage);
+		return utils.waitForElementPresent(driver, contractPage);
 	}
 
 	public List<WebElement> getMenulocators() {
-		return utils.waitForListElementsPresent(driver, menulocators, 10);
+		return utils.waitForListElementsPresent(driver, menuLocators, 10);
 	}
 
 	public void goToBaseURL() {
@@ -76,7 +76,7 @@ public class Contracts {
 	}
 
 	public OfferRequest clickon_Angebote(String menuoption) {
-		driver.findElement(By.xpath(str_angebote.replaceAll("deal_option", menuoption))).click();
+		driver.findElement(By.xpath(strAngebote.replaceAll("deal_option", menuoption))).click();
 		return new OfferRequest(driver);
 	}
 
