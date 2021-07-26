@@ -2,14 +2,14 @@
 This repo contains the UI automation cases that were developed as part of the assignment, to qualify for the post of QE Engineer at Clark
 
 ## Index
-1. [Framework](#Framework)
-2. [Run the Automation Suite](#Run-the-Automation-Suite)
-    1. [Method A Through Code Repo](#Windows-Through-code-Repo)
-    2. [Method B Through Runnable Jar](#Windows-Through-Runnable-Jar)
-    3. [Method C Through Runnable Jar - Mac](#Mac-Through-Runnable-Jar)
-3. [Framework Architecture](#Framework-Architecture)
-4. [Why this framework?](#Why-this-framework?)
-5. [Contact](#Contact)
+1. Framework
+2. Run the Automation Suite
+    1. Method A Through Code Repo
+    2. Method B Through Runnable Jar
+    3. Method C Through Runnable Jar - Mac
+3. Framework Architecture
+4. Why this framework?
+5. Contact
 
 ## **Framework**
 For this assignment, I used Cucumber tool based on java test automation framework suite. It supports Behavior-driven development (BDD) framework  approach with its ordinary language parser called Gherkin. The test cases are stored in the feature files in a logical language that customers can understand. It comprises of the following properties:
@@ -27,7 +27,7 @@ First you need to clone the repo to your local
     `git clone https://github.com/saurabhpiyush1187/clarkautomation.git`
 
 Then you need to follow either of the below methods
-#### **Method A**: Windows Through code Repo
+#### **Method A**:Windows Through code Repo
 **Requirements**
 
 - Java 8
@@ -47,12 +47,13 @@ This will start the execution of the test cases.
 **View HTML Report**
 
       pretty plugin
+      extent-report plugin
 
 Above plugin has been used  for reporting. The report can be viewed in one of the following locations.
 
 >target/cucumber-reports/report.html
 
->test-output/SparkReport {Date and Time}
+>test-output/SparkReport {Date and Time}/test-output/SparkReport/Index.html
 
 OR
 

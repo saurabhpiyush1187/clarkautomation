@@ -1,4 +1,5 @@
 package hooks;
+
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -13,7 +14,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class Apphooks {
-	
+
 	private DriverFactory driverFactory;
 	private WebDriver driver;
 	private ConfigReader configReader;
@@ -30,13 +31,13 @@ public class Apphooks {
 		String browserName = prop.getProperty("browser");
 		driverFactory = new DriverFactory();
 		driver = driverFactory.init_driver(browserName);
-		
+
 	}
-	
+
 	@Before(order = 2)
 	public void BeforeDisplay(Scenario sc) {
 		System.out.println("Before Test-----" + sc.getName());
-		
+
 	}
 
 	@After(order = 0)
@@ -55,6 +56,5 @@ public class Apphooks {
 
 		}
 	}
-
 
 }

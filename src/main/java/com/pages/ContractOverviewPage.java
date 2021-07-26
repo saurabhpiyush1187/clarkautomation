@@ -8,17 +8,16 @@ import com.util.Baseutil;
 import com.util.Elementutil;
 
 public class ContractOverviewPage {
-	
+
 	private WebDriver driver;
-	private String overview= PropertyReader.getProperty("overview","ContractOverview");
+	private String overview = PropertyReader.getProperty("overview", "ContractOverview");
 	private Baseutil utils = new Elementutil();
+
 	public ContractOverviewPage(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 	}
-	
-	
-	public VerifyContractPage clickOnOverview(String button)
-	{	
+
+	public VerifyContractPage clickOnOverview(String button) {
 		By loactorOverview = By.xpath(overview.replaceAll("data", button));
 		utils.waitForElementPresent(driver, loactorOverview);
 		utils.waitForElementToBeClickable(driver, loactorOverview).click();
