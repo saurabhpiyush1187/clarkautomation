@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public interface Baseutil {
 
-	
 	public WebElement getElement(WebDriver driver, By locator);
 
 	public void setImplicitWait(WebDriver driver, int waitTime_InSeconds);
@@ -36,6 +35,7 @@ public interface Baseutil {
 	public boolean areElementsPresent(WebDriver driver, By by);
 
 	public Object executeJS(WebDriver driver, String script);
-	
+
+	public void clickUsingJs(WebDriver driver, By by);
 
 }

@@ -8,42 +8,37 @@ import com.util.PropertyReader;
 import com.util.Baseutil;
 import com.util.Elementutil;
 
-public class BankDetailsPage  {
-	
+public class BankDetailsPage {
+
 	private WebDriver driver;
-	private By bankTextbox =  PropertyReader.getLocator("bank_textbox","Bank_details");
-	private By checkBox =  PropertyReader.getLocator("check_box","Bank_details");
-	private By buttonFurther =  PropertyReader.getLocator("button_further","Bank_details");
-	
+	private By bankTextbox = PropertyReader.getLocator("bank_textbox", "Bank_details");
+	private By checkBox = PropertyReader.getLocator("check_box", "Bank_details");
+	private By buttonFurther = PropertyReader.getLocator("button_further", "Bank_details");
+
 	private Baseutil utils = new Elementutil();
-	
+
 	public BankDetailsPage(WebDriver driver) {
-		this.driver=driver;
+		this.driver = driver;
 	}
 
-	
 	public WebElement getBankTextbox() {
-		return utils.waitForElementPresent(driver,bankTextbox);
+		return utils.waitForElementPresent(driver, bankTextbox);
 	}
-
 
 	public WebElement getCheckBox() {
-		return utils.waitForElementPresent(driver,checkBox);
+		return utils.waitForElementPresent(driver, checkBox);
 	}
-
-
 
 	public WebElement getButtonFurther() {
-		return utils.waitForElementPresent( driver,buttonFurther);
+		return utils.waitForElementPresent(driver, buttonFurther);
 	}
 
-	
-	public SummaryPage enterbankDetails(String strBank)
-	{	
+	public SummaryPage enterbankDetails(String strBank) {
 		getBankTextbox().sendKeys(strBank);
-		getCheckBox().click();
+		getCheckBox();
+		utils.clickUsingJs(driver, checkBox);
 		getButtonFurther().click();
 		return new SummaryPage(driver);
 	}
-	
+
 }
