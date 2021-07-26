@@ -10,7 +10,7 @@ public class Runner {
 	public static void main(String[] args)
 	{
 		testng = new TestNG();
-		testng.setTestClasses(new Class[] {ParallelRun.class});
+		testng.setTestClasses(new Class[] {TestRunner.class});
 		
 		testng.run();
 	}

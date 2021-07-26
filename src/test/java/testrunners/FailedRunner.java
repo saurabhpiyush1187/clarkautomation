@@ -5,12 +5,11 @@ package testrunners;
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
-import io.cucumber.testng.CucumberOptions;
+import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"pretty","html:target/cucumber-reports",
+		plugin = {"pretty","html:target/cucumber-reports/report_failed_run.html",
 	              "json:target/cucumber.json",
-	              "rerun:target/rerun.txt",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"timeline:test-output-thread/"
 				}, 

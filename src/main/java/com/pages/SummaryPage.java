@@ -54,9 +54,9 @@ public class SummaryPage {
 	}
 	
 	
-	public ContractOverview completeNow()
+	public ContractOverviewPage completeNow()
 	{			
 		getCompletenow().click();		
-		return new ContractOverview(driver);
+		return new ContractOverviewPage(driver);
 	}
 }

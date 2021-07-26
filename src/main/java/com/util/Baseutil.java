@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.factory.DriverFactory;
 
 public interface Baseutil {
 
@@ -37,5 +36,6 @@ public interface Baseutil {
 	public boolean areElementsPresent(WebDriver driver, By by);
 
 	public Object executeJS(WebDriver driver, String script);
+	
 
 }

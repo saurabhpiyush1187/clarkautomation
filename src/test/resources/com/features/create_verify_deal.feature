@@ -22,8 +22,9 @@ Feature: Create a deal
     Then the user should be able to view Summary Page which starts from the  following confirmation message
     |Mit Klick auf “Jetzt abschließen” bestätige ich das|
     When the user choose to view contract overview by clicking on "Zur Vertragsübersicht" button
-    Then the user should be able to view the contract on the "app/manager" page
+    Then the user should be able to view the correct contract on the "app/manager" route
 
     Examples: 
       | bankaccount number     | Gewünschter Versicherungsbeginn | Vorschäden |
       | DE55500105174529223988 | Nächster Werktag                | Nein       |
+
