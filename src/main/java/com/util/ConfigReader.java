@@ -11,6 +11,7 @@ public class ConfigReader {
 
 	/**
 	 * This method is used to load the properties from config.properties file
+	 * 
 	 * @return it returns Properties prop object
 	 */
 	public Properties init_prop() {

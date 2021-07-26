@@ -1,1 +1,1 @@
-java -jar Clark_Parallel.jar
+java -jar clarkRunnable.jar
